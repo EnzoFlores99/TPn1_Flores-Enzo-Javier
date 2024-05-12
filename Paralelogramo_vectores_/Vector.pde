@@ -6,33 +6,35 @@ class Vector{
     this.puntoOrigen=puntoOrigen;
     this.puntoDestino=puntoDestino;
   }
-  /*
-  public Vector(float x1, float y1, float x2, float y2){
-  puntoOrigen = new PVector(x1,y1);
-  puntoDestino = new PVector (x2,y2);
-  }*//
-  
- public void sumarVectores(){
-  return PVector(v.puntoDestino.x+puntoOrigen.x,puntoDestino.y+puntoOrigen.y);
+  public Vector(){
+  }
+
+ Vector sumar(Vector v){
+   PVector newPuntoOrigen = PVector.add(this.puntoOrigen, v.puntoOrigen);
+   PVector newPuntoDestino = PVector.add(this.puntoDestino, v.puntoDestino);
+   return new Vector (newPuntoOrigen, newPuntoDestino);
  }
- public float restarVectores(){
-   return new PVector(puntoDestino.x-puntoOrigen.x,puntoDestino.y-puntoOrigen.y);
+ Vector restar(Vector v){
+   PVector newPuntoOrigen = PVector.sub(this.puntoOrigen, v.puntoOrigen);
+   PVector newPuntoDestino = PVector.sub(this.puntoDestino, v.puntoDestino);
+   return new Vector(newPuntoOrigen,newPuntoDestino);
  }
  public void dibujar(){
-   fill(#15CB40);
+   strokeWeight(2);
    line(this.puntoOrigen.x,this.puntoOrigen.y,this.puntoDestino.x,this.puntoDestino.y);
  }
  public PVector getPuntoOrigen(){
-   return.this.puntoOrigen;
+   return this.puntoOrigen;
  }
   public PVector getPuntoDestino(){
-   return.this.puntoDestino;
+   return this.puntoDestino;
  }
- pubic void setPuntoOrigen(PVector puntoOrigen){
+ public void setPuntoOrigen(PVector puntoOrigen){
    this.puntoOrigen=puntoOrigen;
  }
- pubic void setPuntoDestino(PVector puntoDestino){
+ public void setPuntoDestino(PVector puntoDestino){
    this.puntoDestino=puntoDestino;
  }
  
 }
+  
