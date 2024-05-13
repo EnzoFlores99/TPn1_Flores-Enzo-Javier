@@ -9,12 +9,12 @@ class Vector{
   public Vector(){
   }
 
- Vector sumar(Vector v){
+public Vector sumar(Vector v){
    PVector newPuntoOrigen = PVector.add(this.puntoOrigen, v.puntoOrigen);
    PVector newPuntoDestino = PVector.add(this.puntoDestino, v.puntoDestino);
    return new Vector (newPuntoOrigen, newPuntoDestino);
  }
- Vector restar(Vector v){
+ public Vector restar(Vector v){
    PVector newPuntoOrigen = PVector.sub(this.puntoOrigen, v.puntoOrigen);
    PVector newPuntoDestino = PVector.sub(this.puntoDestino, v.puntoDestino);
    return new Vector(newPuntoOrigen,newPuntoDestino);
@@ -37,4 +37,4 @@ class Vector{
  }
  
 }
-  
+      
