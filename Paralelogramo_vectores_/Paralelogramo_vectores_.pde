@@ -10,13 +10,13 @@ void setup() {
   BC = new Vector(C, B);
   AC = new Vector(A, C);
   
-  //// Calcula D usando otro vector
- // CD = new Vector(AB.puntoOrigen, PVector.add(AB.puntoDestino, AC.puntoDestino));
-  // AD =AC.restar(AB);
-   //D = B.add(BC.puntoDestino);
-  ////calcula AD restando AC-AB
-  //AD = new Vector(AC.puntoOrigen, PVector.sub(AC.puntoDestino,AB.puntoDestino));
+  // Calcular vector AD sumando AB y AC
+  AD = AC.sumar(AB);
+  // Calcular vector CD restando BC de AD
+  CD = AD.restar(AB);
 
+  // Calcular el punto D sumando el punto A y el vector AD
+   D = PVector.sub(PVector.sub(B,A),C).mult(10);
  
 
 }
@@ -29,14 +29,14 @@ void draw(){
   line(0,-height/2,0,height/2);
   stroke(#FA0A0A);
   AB.dibujar(); // Vector AB Rojo
- // stroke(#053902); 
- // BC.dibujar(); //Vector BC Verde
- // stroke(#D1FF0A);
- // AC.dibujar(); //Vector AC Amarillo
- //stroke(#0A07F7);//Vector CD azul
-// CD.dibujar(); // Vector CD
- stroke(#FA690F);
- AD.dibujar(); // Vector BC
+ stroke(#053902); 
+ BC.dibujar(); //Vector BC Verde
+ stroke(#D1FF0A);
+ AC.dibujar(); //Vector AC Amarillo
+ stroke(#0A07F7);//Vector AD azul
+  AD.dibujar(); // Vector AD
+ stroke(#EF07F0); //Vector CD morado
+ //CD.dibujar(); // Vector CD
  // println(AC.puntoDestino);
-  //println(AC.puntoOrigen);
+  println(AD.puntoOrigen);
 }
